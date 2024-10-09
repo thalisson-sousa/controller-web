@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import "./List.css";
 
 import Box from '@mui/material/Box';
@@ -5,6 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { FixedSizeList } from 'react-window';
+
 
 function renderRow(props) {
     const { index, style } = props;
@@ -18,7 +21,11 @@ function renderRow(props) {
     );
   }
 
-export default function ListScreen() {
+export default function ListScreen({isPending, error, data}) {
+
+  if (isPending) return 'Loading...';
+
+  if (error) return 'Ocorreu un erro: ' + error.message;
 
     return (
         <Box

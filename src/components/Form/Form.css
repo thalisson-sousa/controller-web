@@ -4,3 +4,8 @@ form {
     gap: 1em;
     width: 60%;
 }
+
+.formInputs {
+    display: flex;
+    gap: 1em;
+}
